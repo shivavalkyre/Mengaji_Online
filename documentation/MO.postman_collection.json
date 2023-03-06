@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "fa5f9639-365b-4c2c-a0b1-13fa2f6c323d",
+		"name": "MO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Fadail Surat Ikhlas\",\r\n    \"author\":\"Ibn Muhammad Khallal\",\r\n    \"author_year_of_death\":\"439\",\r\n    \"tags\":\"AJZA :: 'ULUM :: FADAIL :: HADITH :: QURAN :: QURAN :: TAFSIR\",\r\n    \"publisher\":\"ﻣﺣﻣد ﺑن رزق ﺑن طرھوﻧﻲ :: ﻣﻛﺗﺑﺔ ﻟﯾﻧﺔ - اﻟﻘﺎھرة - دﻣﻧﮭور\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/mengaji_online/books",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"mengaji_online",
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Book",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcxNTMyNDQ3LCJleHAiOjE2NzE1MzYwNDd9.S03_NIVbdS5ObHzAaWI_fu96m0c0bpSU42szCkvdUrw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/api/mengaji_online/books?page=0&size=21",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"mengaji_online",
+						"books"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "21"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcxNTMyNDQ3LCJleHAiOjE2NzE1MzYwNDd9.S03_NIVbdS5ObHzAaWI_fu96m0c0bpSU42szCkvdUrw",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "localhost:3001/api/mengaji_online/books/search?tags=ULUM :: QURAN&order=[{'title':'ASC'},{'author':'DESC'}]",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"mengaji_online",
+						"books",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "Mukhtasar Tabyin",
+							"disabled": true
+						},
+						{
+							"key": "author",
+							"value": "Abu 'Amr Dani",
+							"disabled": true
+						},
+						{
+							"key": "tags",
+							"value": "ULUM :: QURAN"
+						},
+						{
+							"key": "order",
+							"value": "[{'title':'ASC'},{'author':'DESC'}]"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Fadail Surat Ikhlas\",\r\n    \"author\":\"Ibn Muhammad Khallal\",\r\n    \"author_year_of_death\":\"439\",\r\n    \"tags\":\"AJZA :: 'ULUM :: FADAIL :: HADITH :: QURAN :: QURAN :: TAFSIR\",\r\n    \"publisher\":\"ﻣﺣﻣد ﺑن رزق ﺑن طرھوﻧﻲ :: ﻣﻛﺗﺑﺔ ﻟﯾﻧﺔ - اﻟﻘﺎھرة - دﻣﻧﮭور\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/mengaji_online/books/25",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"mengaji_online",
+						"books",
+						"25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/api/mengaji_online/books/4",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"mengaji_online",
+						"books",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
